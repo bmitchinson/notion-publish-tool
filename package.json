@@ -1,7 +1,7 @@
 {
-    "name": "kata-pencil-durability",
+    "name": "notion-publish-tool",
     "version": "0.0.1",
-    "description": "Pencil Durability Code Kata",
+    "description": "Post to Mitchinson.dev from a notion database.",
     "main": "main.js",
     "scripts": {
         "start": "ts-node src/index.ts",
