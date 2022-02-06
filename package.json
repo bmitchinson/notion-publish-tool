@@ -1,0 +1,41 @@
+{
+    "name": "kata-pencil-durability",
+    "version": "0.0.1",
+    "description": "Pencil Durability Code Kata",
+    "main": "main.js",
+    "scripts": {
+        "start": "ts-node src/index.ts",
+        "build": "tsc",
+        "watch": "nodemon src/index.ts",
+        "test": "jest --coverage",
+        "view:cov": "serve coverage/lcov-report",
+        "clean": "rm -rf coverage dist",
+        "lint": "eslint 'src/**/*.ts'",
+        "lint:fix": "eslint 'src/**/*.ts' --fix",
+        "test:watch": "jest --coverage --watchAll"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@types/jest": "^25.2.3",
+        "@types/node": "^14.0.11",
+        "@types/source-map-support": "^0.5.1",
+        "@typescript-eslint/eslint-plugin": "^3.1.0",
+        "@typescript-eslint/parser": "^3.1.0",
+        "eslint": "^7.2.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.3",
+        "jest": "^26.0.1",
+        "onchange": "^7.0.2",
+        "prettier": "^2.0.5",
+        "serve": "^11.3.2",
+        "source-map-support": "^0.5.19",
+        "ts-jest": "^26.1.0",
+        "ts-node": "^8.10.2",
+        "typescript": "^3.9.5"
+    },
+    "devDependencies": {
+        "jest-junit": "^13.0.0",
+        "nodemon": "^2.0.13"
+    }
+}

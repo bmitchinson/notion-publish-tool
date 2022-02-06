@@ -1,0 +1,49 @@
+name: Static Analysis
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    Lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: '14'
+                  cache: 'npm'
+            - run: npm install
+            - run: npm run lint
+
+    Build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: '14'
+                  cache: 'npm'
+            - run: npm install
+            - run: npm run build
+
+    Test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: '14'
+                  cache: 'npm'
+            - run: npm install
+            - run: npm run test
+            - name: Test Report
+              uses: dorny/test-reporter@v1
+              if: success() || failure() # run this step even if previous step failed
+              with:
+                  name: Test Results # Name of the check run which will be created
+                  path: jest_output/junit.xml # Path to test results
+                  reporter: jest-junit # Format of test results
