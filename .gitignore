@@ -2,6 +2,7 @@
 
 node_modules
 dist
+frontend/build
 
 coverage
 jest_output

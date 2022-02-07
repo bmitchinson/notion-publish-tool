@@ -13,3 +13,4 @@ Includes:
 Up to date motiviations, technical goals, and todo list available on [this notion post](https://bmitchinson.notion.site/Posting-From-Notion-5200a0e922e34c999a4f0128b2933f75).
 
 > Created with [bmitchinson/ts-node-starter](https://github.com/bmitchinson/ts-node-starter)
+> Svelte code adapted from the TS config [sveltejs/template](https://github.com/sveltejs/template)

@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "CommonJS",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
@@ -12,5 +12,5 @@
         "outDir": "dist"
     },
     "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/*.test.ts"]
+    "exclude": ["node_modules", "**/*.test.ts", "src/svelte/**/*"]
 }
