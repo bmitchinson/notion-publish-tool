@@ -17,7 +17,8 @@
         "lint:fix": "eslint 'src/**/*.ts' --fix",
         "test:watch": "jest --coverage --watchAll",
         "check": "svelte-check --tsconfig src/svelte/tsconfig.json",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "heroku:log": "heroku logs --tail -a bmitchinson-notion-publisher"
     },
     "author": "",
     "license": "ISC",
