@@ -16,7 +16,8 @@
         "lint": "eslint 'src/**/*.ts'",
         "lint:fix": "eslint 'src/**/*.ts' --fix",
         "test:watch": "jest --coverage --watchAll",
-        "check": "svelte-check --tsconfig src/svelte/tsconfig.json"
+        "check": "svelte-check --tsconfig src/svelte/tsconfig.json",
+        "prepare": "husky install"
     },
     "author": "",
     "license": "ISC",
@@ -57,6 +58,7 @@
         "@rollup/plugin-typescript": "^8.0.0",
         "typescript": "^4.0.0",
         "tslib": "^2.0.0",
-        "@tsconfig/svelte": "^2.0.0"
+        "@tsconfig/svelte": "^2.0.0",
+        "husky": "^7.0.0"
     }
 }
