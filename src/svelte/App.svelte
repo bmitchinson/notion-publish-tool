@@ -6,6 +6,13 @@
         .then(
             ({ msg }) => (document.getElementById('API_MSG').textContent = msg),
         );
+    // TODO: Move to svelte appropriate request / population
+    const socket_url = `ws://${window.location.host}/logger`;
+    const socket = new WebSocket(socket_url);
+    socket.addEventListener('message', function (event) {
+        console.log('Message from server ', event.data);
+        document.getElementById('SOCKET_MSG').textContent = event.data;
+    });
 </script>
 
 <main>
@@ -15,6 +22,7 @@
         how to build Svelte apps.
     </p>
     <p id="API_MSG">Pending API Response...</p>
+    <p id="SOCKET_MSG">Pending WebSocket Response...</p>
 </main>
 
 <style>

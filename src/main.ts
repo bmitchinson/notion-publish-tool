@@ -6,16 +6,16 @@ import { WebSocketServer, WebSocket } from 'ws';
 
 const app = express();
 const server = http.createServer(app);
-const wss = new WebSocketServer({ server });
+const wss = new WebSocketServer({ server, path: '/logger' });
 
 // const socketLogger = new SocketLogger(server);
 
 wss.on('connection', (ws: WebSocket) => {
     console.log('establish websocket connection');
-    ws.send('Connected');
+    ws.send('Hello from the WebSocket 💚');
 });
 
-// app.use(express.static('frontend'));
+app.use(express.static('frontend'));
 
 app.get('/api/hello', (req, res) => {
     console.log('Sent message');
