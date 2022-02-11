@@ -7,7 +7,9 @@
             ({ msg }) => (document.getElementById('API_MSG').textContent = msg),
         );
     // TODO: Move to svelte appropriate request / population
-    const socket_url = `ws://${window.location.host}/logger`;
+    const host_is_ssl = window.location.href.includes('https');
+    const socket_prefix = host_is_ssl ? 'wss' : 'ws';
+    const socket_url = `${socket_prefix}://${window.location.host}/logger`;
     const socket = new WebSocket(socket_url);
     socket.addEventListener('message', function (event) {
         console.log('Message from server ', event.data);
