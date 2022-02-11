@@ -1,14 +1,27 @@
 import express from 'express';
+import * as http from 'http';
 import { port } from './configuration';
-const app = express();
+import { SocketLogger } from './SocketLogger';
+import { WebSocketServer, WebSocket } from 'ws';
 
-app.use(express.static('frontend'));
+const app = express();
+const server = http.createServer(app);
+const wss = new WebSocketServer({ server });
+
+// const socketLogger = new SocketLogger(server);
+
+wss.on('connection', (ws: WebSocket) => {
+    console.log('establish websocket connection');
+    ws.send('Connected');
+});
+
+// app.use(express.static('frontend'));
 
 app.get('/api/hello', (req, res) => {
     console.log('Sent message');
     res.send({ msg: 'Hello from the API 💙' });
 });
 
-app.listen(port, function () {
+server.listen(port, function () {
     console.log(`App is listening on port ${port}!`);
 });
