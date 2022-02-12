@@ -6,6 +6,12 @@
         .then(
             ({ msg }) => (document.getElementById('API_MSG').textContent = msg),
         );
+    fetch('/api/hello_secret')
+        .then((r) => r.json())
+        .then(
+            ({ msg }) =>
+                (document.getElementById('API_SECRET').textContent = msg),
+        );
     // TODO: Move to svelte appropriate request / population
     const host_is_ssl = window.location.href.includes('https');
     const socket_prefix = host_is_ssl ? 'wss' : 'ws';
@@ -25,6 +31,7 @@
     </p>
     <p id="API_MSG">Pending API Response...</p>
     <p id="SOCKET_MSG">Pending WebSocket Response...</p>
+    <p id="API_SECRET">Pending API Secret Response...</p>
 </main>
 
 <style>

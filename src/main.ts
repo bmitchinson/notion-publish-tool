@@ -1,7 +1,7 @@
 import express from 'express';
 import * as http from 'http';
-import { port } from './configuration';
-import { SocketLogger } from './SocketLogger';
+import { getPort, getHelloMsg } from './configuration';
+// import { SocketLogger } from './SocketLogger';
 import { WebSocketServer, WebSocket } from 'ws';
 
 const app = express();
@@ -18,10 +18,15 @@ wss.on('connection', (ws: WebSocket) => {
 app.use(express.static('frontend'));
 
 app.get('/api/hello', (req, res) => {
-    console.log('Sent message');
-    res.send({ msg: 'Hello from the API 💙' });
+    const msg = `Hello from the API 💙`;
+    res.send({ msg });
 });
 
-server.listen(port, function () {
-    console.log(`App is listening on port ${port}!`);
+app.get('/api/hello_secret', (req, res) => {
+    const msg = `Secrets: ${getHelloMsg() || 'Missing'}`;
+    res.send({ msg });
+});
+
+server.listen(getPort(), function () {
+    console.log(`App is listening on port ${getPort()}!`);
 });
