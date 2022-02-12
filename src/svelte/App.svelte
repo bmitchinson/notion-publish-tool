@@ -29,9 +29,9 @@
         Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
         how to build Svelte apps.
     </p>
-    <p id="API_MSG">Pending API Response...</p>
-    <p id="SOCKET_MSG">Pending WebSocket Response...</p>
-    <p id="API_SECRET">Pending API Secret Response...</p>
+    <p id="API_MSG">❌ Pending API Response...</p>
+    <p id="SOCKET_MSG">❌ Pending WebSocket Response...</p>
+    <p id="API_SECRET">❌ Pending API Secret Response...</p>
 </main>
 
 <style>

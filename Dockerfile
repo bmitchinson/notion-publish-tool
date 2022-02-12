@@ -1,5 +1,6 @@
-FROM alpine:3.15.0
-RUN apk add --update nodejs npm
+FROM node:16
+# Not using the -slim or -alpine node image because this one includes git
+
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
@@ -7,5 +8,8 @@ COPY . .
 
 ARG HELLO_MSG
 ENV HELLO_MSG $HELLO_MSG
+
+# ignored by heroku, just used for local development
+EXPOSE 3000
 
 CMD ["npm", "start"]
