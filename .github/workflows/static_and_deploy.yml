@@ -45,4 +45,4 @@ jobs:
                   docker_build_args: |
                       HELLO_MSG
               env:
-                  TEST_ARG: ${{secrets.HELLO_MSG}}
+                  HELLO_MSG: ${{secrets.HELLO_MSG}}
