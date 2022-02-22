@@ -1,6 +1,6 @@
 import express from 'express';
 import * as http from 'http';
-import { getPort, getHelloMsg } from './configuration';
+import { getPort, getHelloMsg, themeName } from './configuration';
 // import { SocketLogger } from './SocketLogger';
 import { WebSocketServer, WebSocket } from 'ws';
 
@@ -25,6 +25,16 @@ app.get('/api/hello', (req, res) => {
 app.get('/api/hello_secret', (req, res) => {
     const msg = `Secrets: ${getHelloMsg() || 'Missing'}`;
     res.send({ msg });
+});
+
+// confirm we have read access to the hexo theme
+//   serves as a confirmation that submodules cloned correctly
+app.get('/api/theme_conf', (req, res) => {
+    import(`../hexo-site/themes/${themeName}/package.json`).then(
+        (theme_package) => {
+            res.send({ msg: `Theme: "${theme_package.name}" 🎨` });
+        },
+    );
 });
 
 server.listen(getPort(), function () {

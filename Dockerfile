@@ -6,6 +6,17 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 
+WORKDIR /hexo-site
+COPY /hexo-site/package*.json .
+RUN npm ci
+
+WORKDIR /hexo-site/themes/bmitchinson_tranquilpeak
+COPY /hexo-site/themes/bmitchinson_tranquilpeak/package*.json .
+RUN npm ci
+RUN npm run build
+
+WORKDIR /app
+
 ARG HELLO_MSG
 ENV HELLO_MSG $HELLO_MSG
 

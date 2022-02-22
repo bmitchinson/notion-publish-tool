@@ -12,6 +12,12 @@
             ({ msg }) =>
                 (document.getElementById('API_SECRET').textContent = msg),
         );
+    fetch('/api/theme_conf')
+        .then((r) => r.json())
+        .then(
+            ({ msg }) =>
+                (document.getElementById('THEME_CONF').textContent = msg),
+        );
     // TODO: Move to svelte appropriate request / population
     const host_is_ssl = window.location.href.includes('https');
     const socket_prefix = host_is_ssl ? 'wss' : 'ws';
@@ -32,6 +38,7 @@
     <p id="API_MSG">❌ Pending API Response...</p>
     <p id="SOCKET_MSG">❌ Pending WebSocket Response...</p>
     <p id="API_SECRET">❌ Pending API Secret Response...</p>
+    <p id="THEME_CONF">❌ Pending API Theme Response...</p>
 </main>
 
 <style>

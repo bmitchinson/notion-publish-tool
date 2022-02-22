@@ -1,0 +1,3 @@
+[submodule "hexo-site"]
+	path = hexo-site
+	url = git@github.com:bmitchinson/Mitchinson.dev.git
