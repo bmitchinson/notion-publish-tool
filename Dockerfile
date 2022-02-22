@@ -9,10 +9,12 @@ COPY . .
 WORKDIR /hexo-site
 COPY /hexo-site/package*.json .
 RUN npm ci
+COPY /hexo-site .
 
 WORKDIR /hexo-site/themes/bmitchinson_tranquilpeak
 COPY /hexo-site/themes/bmitchinson_tranquilpeak/package*.json .
 RUN npm ci
+COPY /hexo-site/themes/bmitchinson_tranquilpeak .
 RUN npm run build
 
 WORKDIR /app
