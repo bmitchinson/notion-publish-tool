@@ -1,8 +1,7 @@
-.idea
-
 node_modules
 dist
 frontend/build
+storybook_build
 
 coverage
 jest_output
