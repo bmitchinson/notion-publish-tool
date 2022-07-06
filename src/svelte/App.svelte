@@ -1,5 +1,6 @@
 <script lang="ts">
     export let name: string;
+
     // TODO: Move to svelte appropriate request / population
     fetch('/api/hello')
         .then((r) => r.json())
@@ -41,7 +42,9 @@
     <p id="THEME_CONF">❌ Pending API Theme Response...</p>
 </main>
 
-<style>
+<style lang="scss" global>
+    @import './global.scss';
+
     main {
         text-align: center;
         padding: 1em;

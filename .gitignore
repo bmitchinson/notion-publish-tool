@@ -5,3 +5,5 @@ storybook_build
 
 coverage
 jest_output
+
+.DS_Store
