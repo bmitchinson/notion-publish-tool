@@ -26,7 +26,7 @@ Up to date motiviations, technical goals, and todo list available on [this notio
 ## Design
 
 - Page / Component [Design in Figma](https://www.figma.com/file/A4cBLkwvsozovIXCncPPu7/Main?node-id=0%3A1)
-  - (Ripped off from the IBM Component Library)
+  - ([Ripped off from the IBM Component Library](https://www.ibm.com/design/language/iconography/ui-icons/library/))
   - Hit the "F" in the upper left to flip through pages
 - Storybook for component preview [hosted on Github Pages](https://bmitchinson.github.io/notion-publish-tool)
 
