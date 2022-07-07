@@ -9,4 +9,5 @@ module.exports = {
         '@storybook/addon-interactions',
     ],
     framework: '@storybook/svelte',
+    staticDirs: ['../frontend'],
 };

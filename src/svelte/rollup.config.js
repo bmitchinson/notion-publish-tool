@@ -1,3 +1,4 @@
+import copy from 'rollup-plugin-copy';
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -20,9 +21,6 @@ export default {
         svelte({
             preprocess: sveltePreprocess({
                 sourceMap: !production,
-                scss: {
-                    prependData: `@import './global.scss';`,
-                },
             }),
             compilerOptions: {
                 // enable run-time checks when not in production
@@ -46,6 +44,9 @@ export default {
         typescript({
             sourceMap: !production,
             inlineSources: !production,
+        }),
+        copy({
+            targets: [{ src: '../assets/**/*', dest: '../../frontend/assets' }],
         }),
 
         // If we're building for production (npm run build

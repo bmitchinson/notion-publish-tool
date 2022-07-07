@@ -1,6 +1,7 @@
 node_modules
 dist
 frontend/build
+frontend/assets
 storybook_build
 
 coverage
