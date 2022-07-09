@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:16.14.0
 # Not using the -slim or -alpine node image because this one includes git
 
 WORKDIR /app
