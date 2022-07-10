@@ -1,4 +1,4 @@
-const build_site = 'https://bmitchinson.github.io/notion-publish-tool/';
+const build_site = '/notion-publish-tool/';
 
 module.exports = {
     stories: [
