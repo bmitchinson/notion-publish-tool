@@ -18,7 +18,6 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm run storybookbuild
-            - run: cp -R src/assets storybook_build/assets
             - uses: JamesIves/github-pages-deploy-action@v4
               with:
                   folder: storybook_build
