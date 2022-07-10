@@ -6,7 +6,7 @@ on:
 
 jobs:
     Static-Check:
-        uses: bmitchinson/notion-publish-tool/.github/workflows/static.yml
+        uses: bmitchinson/notion-publish-tool/.github/workflows/static.yml@$GITHUB_SHA
         secrets: inherit
 
     Deploy-App:
