@@ -1,0 +1,24 @@
+name: Deploy Storybook
+
+on:
+    workflow_run:
+        workflows: ['Static Analysis']
+        branches: [main]
+        types:
+            - completed
+
+jobs:
+    Build-and-Deploy-Storybook:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: '16.14.0'
+                  cache: 'npm'
+            - run: npm ci
+            - run: npm run storybookbuild
+            - run: cp -R src/assets storybook_build/assets
+            - uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  folder: storybook_build
