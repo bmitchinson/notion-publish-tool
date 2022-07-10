@@ -1,5 +1,3 @@
-const build_site = '/notion-publish-tool/';
-
 module.exports = {
     stories: [
         '../src/**/*.stories.mdx',
@@ -11,16 +9,20 @@ module.exports = {
         '@storybook/addon-interactions',
     ],
     framework: '@storybook/svelte',
+    core: {
+        builder: 'webpack5',
+    },
     staticDirs: [{ from: '../src/assets', to: 'assets/' }],
     webpackFinal: async (config) => {
         if (process.env.GH_PAGES) {
-            config.output.publicPath = build_site;
-        }
-        return config;
-    },
-    managerWebpack: async (config) => {
-        if (process.env.GH_PAGES) {
-            config.output.publicPath = build_site;
+            config.module.rules.push({
+                test: /.svelte$/,
+                loader: 'string-replace-loader',
+                options: {
+                    search: '/assets/',
+                    replace: '/notion-publish-tool/assets/',
+                },
+            });
         }
         return config;
     },
