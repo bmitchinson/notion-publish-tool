@@ -16,7 +16,7 @@ jobs:
               with:
                   node-version: '16.14.0'
                   cache: 'npm'
-            - run: npm install
+            - run: npm ci
             - run: npm run lint
 
     Build:
@@ -27,7 +27,7 @@ jobs:
               with:
                   node-version: '16.14.0'
                   cache: 'npm'
-            - run: npm install
+            - run: npm ci
             - run: npm run build
 
     Build-and-Deploy-Storybook:
@@ -41,9 +41,9 @@ jobs:
               with:
                   node-version: '16.14.0'
                   cache: 'npm'
-            - run: npm install
+            - run: npm ci
             - run: npm run storybookbuild
-            - run: ls storybook_build
+            - run: cp -R src/assets storybook_build/assets
             - uses: JamesIves/github-pages-deploy-action@v4
               with:
                   folder: storybook_build # The folder the action should deploy.
