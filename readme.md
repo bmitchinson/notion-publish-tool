@@ -1,6 +1,6 @@
 ## Notion Publish Tool - [publish.mitchinson.dev](https://publish.mitchinson.dev/)
 
-A publishing API for mirroring Notion posts to [mitchinson.dev](https://mitchinson.dev)
+A publishing web app for mirroring Notion posts to [mitchinson.dev](https://mitchinson.dev)
 
 Includes:
 
