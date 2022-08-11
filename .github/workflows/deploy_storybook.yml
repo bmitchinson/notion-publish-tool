@@ -1,4 +1,4 @@
-name: Deploy Storybook
+name: Storybook Build / Deploy
 
 on:
     workflow_run:

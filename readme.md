@@ -1,5 +1,9 @@
 ## Notion Publish Tool - [publish.mitchinson.dev](https://publish.mitchinson.dev/)
 
+![Tests](https://github.com/bmitchinson/notion-publish-tool/actions/workflows/static.yml/badge.svg?branch=main)
+![Storybook](https://github.com/bmitchinson/notion-publish-tool/actions/workflows/deploy_storybook.yml/badge.svg?branch=main)
+![Heroku](https://github.com/bmitchinson/notion-publish-tool/actions/workflows/deploy_heroku.yml/badge.svg)
+
 A publishing web app for mirroring Notion posts to [mitchinson.dev](https://mitchinson.dev)
 
 Includes:
@@ -25,10 +29,10 @@ Up to date motiviations, technical goals, and todo list available on [this notio
 
 ## Design
 
-- Page / Component [Design in Figma](https://www.figma.com/file/A4cBLkwvsozovIXCncPPu7/Main?node-id=0%3A1)
-  - ([Ripped off from the IBM Component Library](https://www.ibm.com/design/language/iconography/ui-icons/library/))
-  - Hit the "F" in the upper left to flip through pages
-- Storybook for component preview [hosted on Github Pages](https://bmitchinson.github.io/notion-publish-tool)
+-   Page / Component [Design in Figma](https://www.figma.com/file/A4cBLkwvsozovIXCncPPu7/Main?node-id=0%3A1)
+    -   ([Ripped off from the IBM Component Library](https://www.ibm.com/design/language/iconography/ui-icons/library/))
+    -   Hit the "F" in the upper left to flip through pages
+-   Storybook for component preview [hosted on Github Pages](https://bmitchinson.github.io/notion-publish-tool)
 
 ## Getting Started
 
