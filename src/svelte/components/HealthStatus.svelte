@@ -22,7 +22,6 @@
     {:else}
         <img src={'/assets/icons/fail.svg'} alt="red cross" class="fail-icon" />
     {/if}
-    <img src={'/assets/icons/fail.svg'} alt="red cross" class="fail-icon" />
     <div class="text">
         <p>cloudinary api</p>
     </div>

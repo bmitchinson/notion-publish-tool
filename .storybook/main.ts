@@ -27,7 +27,7 @@ module.exports = {
                 test: /.svelte$/,
                 loader: 'string-replace-loader',
                 options: {
-                    search: '/assets/',
+                    search: /\/assets\//g,
                     replace: '/notion-publish-tool/assets/',
                 },
             });
