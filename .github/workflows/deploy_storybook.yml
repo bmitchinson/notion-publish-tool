@@ -2,7 +2,7 @@ name: Storybook Build / Deploy
 
 on:
     workflow_run:
-        workflows: ['Static Analysis']
+        workflows: ['Build']
         branches: [main]
         types:
             - completed
