@@ -1,3 +1,5 @@
+import sveltePreprocess from 'svelte-preprocess';
+
 module.exports = {
     stories: [
         '../src/**/*.stories.mdx',
@@ -7,15 +9,21 @@ module.exports = {
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
+        'storybook-addon-mock/register',
     ],
     framework: '@storybook/svelte',
+    svelteOptions: {
+        preprocess: sveltePreprocess({}),
+    },
     core: {
         builder: 'webpack5',
     },
     staticDirs: [{ from: '../src/assets', to: 'assets/' }],
-    webpackFinal: async (config) => {
+    webpackFinal: async (config: any) => {
+        const rules = config.module?.rules || [];
+
         if (process.env.GH_PAGES) {
-            config.module.rules.push({
+            rules.push({
                 test: /.svelte$/,
                 loader: 'string-replace-loader',
                 options: {
@@ -24,6 +32,8 @@ module.exports = {
                 },
             });
         }
+
+        config.module.rules = rules;
         return config;
     },
 };

@@ -3,8 +3,7 @@
     "include": ["./**/*"],
     "compilerOptions": {
         "lib": ["dom"],
-        "module": "ESNext",
-        "sourceMap": true
+        "module": "ESNext"
     },
     "exclude": ["node_modules/*", "__sapper__/*"]
 }
