@@ -41,3 +41,7 @@ Then use `git submodule update --init --recursive` to pull down the modules.
 
 Your hexo site should be configured to use hexo-deploy with a git PAT token.
 See [my site](https://github.com/bmitchinson/Mitchinson.dev) as an example.
+
+-   `npm run storybook` opens storybook to view UI components in isolation.
+
+-   `npm run watch` opens api in watch mode. manual page reloads are required to view svelte changes.
