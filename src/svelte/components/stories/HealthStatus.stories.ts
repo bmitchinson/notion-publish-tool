@@ -15,23 +15,21 @@ const Template = ({ ...args }) => ({
 });
 
 const mockHealthCheckUrl = `${storybookURL}/healthcheck/fake_service`;
+const buildMockWithResponse = (response) => ({
+    url: mockHealthCheckUrl,
+    method: 'GET',
+    status: 200,
+    response,
+    delay: 1000,
+});
+
 const mockHealthCheckResults = {
-    success: {
-        url: mockHealthCheckUrl,
-        method: 'GET',
-        status: 200,
-        response: {
-            data: { healthy: true },
-        },
-    },
-    failure: {
-        url: mockHealthCheckUrl,
-        method: 'GET',
-        status: 200,
-        response: {
-            data: { healthy: false },
-        },
-    },
+    success: buildMockWithResponse({
+        data: { healthy: true },
+    }),
+    failure: buildMockWithResponse({
+        data: { healthy: false },
+    }),
 };
 
 export const Success = Template.bind({});
