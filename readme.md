@@ -34,6 +34,16 @@ Up to date motiviations, technical goals, and todo list available on [this notio
     -   Hit the "F" in the upper left to flip through pages
 -   Storybook for component preview [hosted on Github Pages](https://bmitchinson.github.io/notion-publish-tool)
 
+## Testing
+
+-   API is unit tested with Jest + e2e tested with cypress.
+-   UI is tested in the e2e layer. I'd like to unit test components but,
+    it's been a challenge to mock the web socket that sets component contents.
+    Components mostly display information from the socket, they don't have
+    much interactivity.
+-   There's also UI response mocks in storybook, but those tests have no automation.
+    Visual regression testing is difficult with timed mock responses.
+
 ## Getting Started
 
 Alter `.gitmodules` to clone your own hexo site to the `hexo-site` directory.
