@@ -9,18 +9,23 @@ export default {
     decorators: [withMock],
 };
 
+const mockHealthCheckUrl = `${storybookURL}/healthcheck/fake_service`;
+const defaultArgs = {
+    healthCheckUrl: mockHealthCheckUrl,
+    title: 'cloudinary api',
+};
+
 const Template = ({ ...args }) => ({
     Component: HealthStatus,
-    props: args,
+    props: { ...defaultArgs, ...args },
 });
 
-const mockHealthCheckUrl = `${storybookURL}/healthcheck/fake_service`;
 const buildMockWithResponse = (response) => ({
     url: mockHealthCheckUrl,
     method: 'GET',
     status: 200,
     response,
-    delay: 1000,
+    delay: 2000,
 });
 
 const mockHealthCheckResults = {
@@ -34,8 +39,7 @@ const mockHealthCheckResults = {
 
 export const Success = Template.bind({});
 Success.parameters = { mockData: [mockHealthCheckResults.success] };
-Success.args = { healthCheckUrl: mockHealthCheckUrl };
+// Success.args = { defaultArgOverrides: here  };
 
 export const Fail = Template.bind({});
 Fail.parameters = { mockData: [mockHealthCheckResults.failure] };
-Fail.args = { healthCheckUrl: mockHealthCheckUrl };

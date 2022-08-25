@@ -8,3 +8,16 @@ body {
 p {
     margin: 0px;
 }
+
+.spin {
+    animation: rotating 1s ease-in-out infinite;
+}
+
+@keyframes rotating {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
