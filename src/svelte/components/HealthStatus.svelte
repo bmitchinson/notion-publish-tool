@@ -49,7 +49,7 @@
         background-color: white;
         display: flex;
         align-items: center;
-        max-width: 13em;
+        width: 13em;
         min-height: 2em;
         padding: 0.2em 0em 0.2em 0.4em;
         .icon {

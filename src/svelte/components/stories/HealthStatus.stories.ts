@@ -38,8 +38,14 @@ const mockHealthCheckResults = {
 };
 
 export const Success = Template.bind({});
-Success.parameters = { mockData: [mockHealthCheckResults.success] };
+Success.parameters = {
+    mockData: [mockHealthCheckResults.success],
+    layout: 'centered',
+};
 // Success.args = { defaultArgOverrides: here  };
 
 export const Fail = Template.bind({});
-Fail.parameters = { mockData: [mockHealthCheckResults.failure] };
+Fail.parameters = {
+    mockData: [mockHealthCheckResults.failure],
+    layout: 'centered',
+};
