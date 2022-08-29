@@ -1,4 +1,4 @@
 export interface ServiceHealthRes {
     healthy: boolean;
-    failure?: string;
+    failReason?: string;
 }

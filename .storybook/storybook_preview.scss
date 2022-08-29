@@ -1,3 +1,8 @@
 body {
     background-color: #35363a;
 }
+
+#root > .tooltip {
+    opacity: 1;
+    position: relative;
+}

@@ -3,6 +3,8 @@ import withMock from 'storybook-addon-mock';
 
 import { storybookURL } from './storybookurl';
 
+import { ServiceHealthRes } from '../../../api/healthchecks/response';
+
 export default {
     title: 'Components/HealthStatus',
     component: HealthStatus,
@@ -20,12 +22,12 @@ const Template = ({ ...args }) => ({
     props: { ...defaultArgs, ...args },
 });
 
-const buildMockWithResponse = (response) => ({
+const buildMockWithResponse = (response: { data: ServiceHealthRes }) => ({
     url: mockHealthCheckUrl,
     method: 'GET',
     status: 200,
     response,
-    delay: 2000,
+    delay: 1500,
 });
 
 const mockHealthCheckResults = {
@@ -34,6 +36,9 @@ const mockHealthCheckResults = {
     }),
     failure: buildMockWithResponse({
         data: { healthy: false },
+    }),
+    failureWithReason: buildMockWithResponse({
+        data: { healthy: false, failReason: 'Aww man the request failed :/' },
     }),
 };
 
@@ -49,3 +54,11 @@ Fail.parameters = {
     mockData: [mockHealthCheckResults.failure],
     layout: 'centered',
 };
+
+export const FailWithReason = Template.bind({});
+FailWithReason.parameters = {
+    mockData: [mockHealthCheckResults.failureWithReason],
+    layout: 'centered',
+};
+FailWithReason.args = { title: 'drat' };
+FailWithReason.storyName = 'Failed with Reason Tooltip (Hover)';

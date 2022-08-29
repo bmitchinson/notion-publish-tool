@@ -1,8 +1,9 @@
 <script lang="ts">
+    import { fade } from 'svelte/transition';
     export let text: string;
 </script>
 
-<div>
+<div transition:fade class="tooltip">
     <div class="tooltip-box">
         {text}
     </div>
@@ -14,6 +15,14 @@
 
 <style lang="scss">
     @import '../colors.scss';
+
+    .tooltip {
+        position: absolute;
+        z-index: 10;
+        bottom: 90%;
+        transition: opacity 400ms;
+        opacity: 0;
+    }
 
     .tooltip-box {
         border: 2px solid white;
@@ -27,7 +36,7 @@
         left: 43%;
     }
     .tooltip-arrow-outline {
-        position: fixed;
+        position: relative;
         width: 0;
         height: 0;
         border-left: 12px solid transparent;
@@ -38,7 +47,7 @@
         position: relative;
         width: 0;
         height: 0;
-        top: -0.15em;
+        top: -0.75em;
         border-left: 12px solid transparent;
         border-right: 12px solid transparent;
         border-top: 9px solid $background-grey;
