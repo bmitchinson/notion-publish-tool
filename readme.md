@@ -11,6 +11,8 @@ Includes:
 -   Asset uploading to Cloudinary CDN
 -   Dev.to cross posting
 -   Front end for initiating builds @ [publish.mitchinson.dev](https://publish.mitchinson.dev)
+-   The beginnings of a svelte ui component library - [storybook](https://bmitchinson.github.io/notion-publish-tool)
+    -   ([Referencing IBM Design Language](https://www.ibm.com/design/language/iconography/ui-icons/library/))
 
 Up to date motiviations, technical goals, and todo list available on [this notion post](https://bmitchinson.notion.site/Posting-From-Notion-5200a0e922e34c999a4f0128b2933f75).
 
@@ -55,3 +57,12 @@ See [my site](https://github.com/bmitchinson/Mitchinson.dev) as an example.
 -   `npm run storybook` opens storybook to view UI components in isolation.
 
 -   `npm run watch` opens api in watch mode. manual page reloads are required to view svelte changes.
+
+## Links used to learn:
+
+-   [MDN - Svelte Store](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Svelte_stores)
+-   [MDN - Svelte: Reactivity, lifecycle, accessibility](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Svelte_reactivity_lifecycle_accessibility)
+
+## Dependency Maintenance
+
+-   `npx storybook upgrade` will attempt to upgrade all @storybook/xyz packages as needed
