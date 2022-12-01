@@ -1,4 +1,5 @@
 import TooltipComp from '../Tooltip.svelte';
+import { getComponent } from './utilities';
 
 export default {
     title: 'Components/Tooltip',
@@ -9,12 +10,9 @@ const defaultArgs = {
     text: 'text for tooltip. this text should wrap and be nice! 😍',
 };
 
-const Template = ({ ...args }) => ({
+const instance = ({ ...args }) => ({
     Component: TooltipComp,
     props: { ...defaultArgs, ...args },
 });
 
-export const Tooltip = Template.bind({});
-Tooltip.parameters = {
-    layout: 'centered',
-};
+export const Tooltip = getComponent(instance);

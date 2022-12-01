@@ -5,8 +5,8 @@ export default {
     component: ModalViewComp,
 };
 
-const Template = () => ({
+const instance = () => ({
     Component: ModalViewComp,
 });
 
-export const Modal = Template.bind({});
+export const Modal = instance.bind({});

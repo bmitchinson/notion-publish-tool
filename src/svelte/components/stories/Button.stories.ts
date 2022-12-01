@@ -1,28 +1,20 @@
 import ButtonComp, { ButtonTypes } from '../Button.svelte';
+import { getComponent } from './utilities';
 
 export default {
     title: 'Components/Button',
     component: ButtonComp,
 };
 
-const Template = ({ ...args }) => ({
+const instance = ({ ...args }) => ({
     Component: ButtonComp,
     props: { ...args },
 });
 
-export const PrimaryButton = Template.bind({});
-PrimaryButton.parameters = {
-    layout: 'centered',
-};
+export const PrimaryButton = getComponent(instance);
 
-export const CancelButton = Template.bind({});
-CancelButton.parameters = {
-    layout: 'centered',
-};
+export const CancelButton = getComponent(instance);
 CancelButton.args = { btnType: ButtonTypes.Cancel };
 
-export const DisabledButton = Template.bind({});
-DisabledButton.parameters = {
-    layout: 'centered',
-};
+export const DisabledButton = getComponent(instance);
 DisabledButton.args = { disabled: true };
