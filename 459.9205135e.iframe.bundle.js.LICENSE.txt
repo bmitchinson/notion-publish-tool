@@ -17,12 +17,6 @@ object-assign
  * Released under the MIT License.
  */
 
-/**
- * mock-xmlhttprequest v7.0.4
- * (c) 2021 Bertrand Guay-Paquet
- * @license ISC
- */
-
 /** @license React v16.14.0
  * react.production.min.js
  *
