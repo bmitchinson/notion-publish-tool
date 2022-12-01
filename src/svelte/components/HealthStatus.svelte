@@ -1,30 +1,9 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-    import type { ServiceHealthRes } from '../../api/healthchecks/response';
     import Tooltip from './Tooltip.svelte';
-    // args /////////////////
-    export let healthCheckUrl: string;
-    export let title: string;
-    /////////////////////////
-    // later: write "false" to a store that confirms all health status are passing
-    /////////////////////////
-    let healthy: boolean | undefined;
-    let failReason = null;
-    healthy = undefined;
 
-    onMount(async () => {
-        fetch(healthCheckUrl)
-            .then((r) => r.json())
-            .then(({ data }: { data: ServiceHealthRes }) => {
-                healthy = data.healthy;
-                failReason = data?.failReason;
-            })
-            .catch((e) => {
-                console.error(`failed to check ${title}: ${e}`);
-                healthy = false;
-                failReason = 'failed to reach healthcheck.';
-            });
-    });
+    export let title: string;
+    export let healthy: boolean | undefined = undefined;
+    export let failReason = null;
 </script>
 
 <div class="health-status">
