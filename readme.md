@@ -55,6 +55,7 @@ Your hexo site should be configured to use hexo-deploy with a git PAT token.
 See [my site](https://github.com/bmitchinson/Mitchinson.dev) as an example.
 
 -   `npm run storybook` opens storybook to view UI components in isolation.
+-   If sass import errors, delete cached `dist` and `storybook_build`
 
 -   `npm run watch` opens api in watch mode. manual page reloads are required to view svelte changes.
 
