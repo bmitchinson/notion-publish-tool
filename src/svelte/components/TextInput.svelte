@@ -10,6 +10,7 @@
     let onBlur = () => {
         focused = false;
     };
+    $: show_error_items = failed && !focused;
 </script>
 
 <div>
@@ -19,10 +20,13 @@
         on:focus={onFocus}
         on:blur={onBlur}
     />
-    {#if failed && !focused}
-        <img class="icon" src={'/assets/icons/fail_two.svg'} />
-        <p class="failreason">{failureReason}</p>
-    {/if}
+    <img
+        class="icon"
+        class:hide={!show_error_items}
+        src={'/assets/icons/fail_two.svg'}
+        alt="fail icon"
+    />
+    <p class="failreason" class:hide={!show_error_items}>{failureReason}</p>
 </div>
 
 <style lang="scss">
@@ -52,5 +56,8 @@
         color: $text-input-border-red;
         padding-top: 0.5em;
         margin-left: -4.5px;
+    }
+    .hide {
+        visibility: hidden;
     }
 </style>
