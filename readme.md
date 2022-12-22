@@ -57,7 +57,7 @@ See [my site](https://github.com/bmitchinson/Mitchinson.dev) as an example.
 -   `npm run storybook` opens storybook to view UI components in isolation.
 
     -   If sass import errors, delete cached `dist` and `storybook_build`
-    -   Close any browser tabs that may have cached the storybook page
+    -   Close any browser tabs that may have cached the storybook page and then quit browser, reopen
 
 -   `npm run watch` opens api in watch mode. manual page reloads are required to view svelte changes.
 
