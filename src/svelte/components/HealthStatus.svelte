@@ -19,7 +19,7 @@
             />
         {:else if healthy === true}
             <img
-                src={'/assets/icons/checkmark--filled.svg'}
+                src={'/assets/icons/success.svg'}
                 alt="green checkmark"
                 class="icon"
             />

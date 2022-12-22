@@ -19,7 +19,7 @@
         "check": "svelte-check --tsconfig src/svelte/tsconfig.json",
         "prepare": "husky install",
         "heroku:log": "heroku logs --tail -a bmitchinson-notion-publisher",
-        "storybook": "start-storybook -p 6006",
+        "storybook": "rm -rf storybook_build dist && start-storybook -p 6006",
         "storybookbuild": "rm -rf storybook_build && build-storybook -o storybook_build"
     },
     "author": "",
