@@ -1,6 +1,7 @@
 <script lang="ts">
     export let placeholder = 'placeholder';
     export let failed = false;
+    export let success = false;
     export let loading = false;
     export let failureReason = 'required value';
 
@@ -12,6 +13,7 @@
         focused = false;
     };
     $: show_error_items = failed && !focused && !loading;
+    $: show_success = success && !focused && !loading && !failed;
 </script>
 
 <div class="inputparent">
@@ -32,6 +34,12 @@
         class:hide={!show_error_items}
         src={'/assets/icons/fail_two.svg'}
         alt="fail icon"
+    />
+    <img
+        class="successicon"
+        class:hide={!show_success}
+        src={'/assets/icons/success.svg'}
+        alt="success icon"
     />
     <p class="failreason" class:hide={!show_error_items}>{failureReason}</p>
 </div>
@@ -62,6 +70,13 @@
         animation: rotation 1s infinite ease;
     }
     .failicon {
+        position: absolute;
+        right: 0.4em;
+        top: 0.55em;
+        z-index: 10;
+        width: 1.5em;
+    }
+    .successicon {
         position: absolute;
         right: 0.4em;
         top: 0.55em;
