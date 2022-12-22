@@ -4,7 +4,7 @@
         Error = 'error',
         Success = 'success',
     }
-    interface LogLine {
+    export interface LogLine {
         unixTime: number;
         level: LogLineLevel;
         msg: String;
@@ -35,11 +35,11 @@
     .logbox {
         border-radius: 0.7em;
         padding: 1.2em 0em 1.2em 1.2em;
-        width: 40em;
-        height: 15em;
         background-color: white;
         overflow: scroll;
         overflow-x: hidden;
+        width: 100%;
+        height: 100%;
     }
     // https://stackoverflow.com/a/21684424
     .logbox::-webkit-scrollbar {

@@ -1,4 +1,5 @@
-import Component, { LogLineLevel } from '../LogArea.svelte';
+import { LogLineLevel } from '../LogArea.svelte';
+import Component from '../storybook_wrappers/LogAreaView.svelte';
 import { getComponent } from './utilities';
 
 export default {
