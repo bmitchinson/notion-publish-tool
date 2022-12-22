@@ -1,6 +1,7 @@
 <script lang="ts">
     export let placeholder = 'placeholder';
     export let failed = false;
+    export let loading = false;
     export let failureReason = 'required value';
 
     let focused = false;
@@ -10,18 +11,24 @@
     let onBlur = () => {
         focused = false;
     };
-    $: show_error_items = failed && !focused;
+    $: show_error_items = failed && !focused && !loading;
 </script>
 
-<div>
+<div class="inputparent">
     <input
-        class:fail={failed && !focused}
+        class:fail={failed && !focused && !loading}
         {placeholder}
         on:focus={onFocus}
         on:blur={onBlur}
     />
     <img
-        class="icon"
+        class="loadingicon"
+        class:hide={!loading}
+        src={'/assets/icons/loading.svg'}
+        alt="loading icon"
+    />
+    <img
+        class="failicon"
         class:hide={!show_error_items}
         src={'/assets/icons/fail_two.svg'}
         alt="fail icon"
@@ -46,18 +53,40 @@
         outline: 3px solid $text-input-border-red;
         border-bottom: solid 2px white;
     }
-    .icon {
-        position: relative;
-        right: 2em;
-        top: 0.2em;
+    .loadingicon {
+        position: absolute;
+        right: 0.5em;
+        top: 0.55em;
         z-index: 10;
+        width: 1.5em;
+        animation: rotation 1s infinite ease;
+    }
+    .failicon {
+        position: absolute;
+        right: 0.4em;
+        top: 0.55em;
+        z-index: 10;
+        width: 1.5em;
     }
     .failreason {
         color: $text-input-border-red;
         padding-top: 0.5em;
+        width: auto;
         margin-left: -4.5px;
     }
     .hide {
         visibility: hidden;
+    }
+    .inputparent {
+        position: relative;
+    }
+
+    @keyframes rotation {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(359deg);
+        }
     }
 </style>
