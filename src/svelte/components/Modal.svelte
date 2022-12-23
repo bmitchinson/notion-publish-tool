@@ -66,6 +66,7 @@
         position: relative;
         max-height: 90%;
         overflow: scroll;
+        overflow-x: hidden;
     }
     .close-btn {
         position: absolute;

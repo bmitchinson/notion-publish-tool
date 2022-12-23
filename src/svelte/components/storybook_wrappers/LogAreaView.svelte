@@ -5,13 +5,21 @@
     export let logLines = [] as LogLine[];
 </script>
 
-<div class="storybook-view">
-    <LogArea {logLines} />
+<div class="center">
+    <div class="storybook-view">
+        <LogArea {logLines} />
+    </div>
 </div>
 
 <style lang="scss">
     .storybook-view {
-        width: 30em;
         height: 10em;
+        min-width: 10em;
+        max-width: 70%;
+    }
+    .center {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 </style>
