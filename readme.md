@@ -11,7 +11,7 @@ Includes:
 -   Asset uploading to Cloudinary CDN
 -   Dev.to cross posting
 -   Front end for initiating builds @ [publish.mitchinson.dev](https://publish.mitchinson.dev)
--   The beginnings of a svelte ui component library - [storybook](https://bmitchinson.github.io/notion-publish-tool)
+-   The beginnings of a svelte ui component library - [storybook](https://bmitchinson.github.io/notion-publish-tool) - [figma](https://www.figma.com/file/A4cBLkwvsozovIXCncPPu7/Main?node-id=0%3A1)
     -   ([Referencing IBM Design Language](https://www.ibm.com/design/language/iconography/ui-icons/library/))
 
 Up to date motiviations, technical goals, and todo list available on [this notion post](https://bmitchinson.notion.site/Posting-From-Notion-5200a0e922e34c999a4f0128b2933f75).
