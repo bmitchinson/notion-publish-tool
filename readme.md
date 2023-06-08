@@ -1,3 +1,7 @@
+Deprecated! Wrote some code to bundle svelte with websocket and rest connections to an api hosted out of one image, made [this figma](https://www.figma.com/file/A4cBLkwvsozovIXCncPPu7/Main?node-id=0%3A1) and [this storybook](https://github.com/bmitchinson/notion-publish-tool/actions/workflows/deploy_storybook.yml/badge.svg?branch=main) of ui components, but it was too ambitious. The goal was to build a tool with UI that would render notion posts to markdown, handle asset management / uploads, and export posts to [my old hexo site](v2.mitchinson.dev)
+
+Instead, I opted to use some existing tools to use notion as a CMS directly. - [Blog](https://github.com/bmitchinson/blog.mitchinson.dev)
+
 ## Notion Publish Tool - [publish.mitchinson.dev](https://publish.mitchinson.dev/)
 
 ![Tests](https://github.com/bmitchinson/notion-publish-tool/actions/workflows/static.yml/badge.svg?branch=main)
